@@ -1,26 +1,79 @@
+/* ================================
+   Tailwind Modern Setup
+   ================================ */
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* 2️⃣ Custom Base Layer (variabel & dark mode) */
+@layer base {
+
+  /* Variabel global default (light mode) */
   :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --font-sans: 'Geist Sans', system-ui, sans-serif;
+    --font-mono: 'Geist Mono', monospace;
+  }
+
+  /* Dark mode variables */
+  .dark {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+
+  /* Body style menggunakan variabel */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Contoh scrollbar custom */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    border: 2px solid;
+    background-color: var(--color-neutral-600);
+    border-color: var(--color-neutral-300);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: var(--color-neutral-400);
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 3️⃣ Custom Components Layer */
+@layer components {
+
+  /* Contoh bentuk hexagon */
+  .hexagon {
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  }
+}
+
+/* 4️⃣ Custom Utilities Layer (opsional) */
+@layer utilities {
+
+  /* Misal utility tambahan */
+  .cursor-pointer-important {
+    cursor: pointer !important;
+  }
 }

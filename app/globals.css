@@ -16,25 +16,24 @@
 
   /* Variabel global default (light mode) */
   :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #f02050;
+    --foreground: #ffffff;
     --font-sans: 'Geist Sans', system-ui, sans-serif;
     --font-mono: 'Geist Mono', monospace;
   }
 
   /* Dark mode variables */
   .dark {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #000000;
   }
 
   /* Body style menggunakan variabel */
   body {
-    background-color: var(--background);
+    background-color: transparent;
     color: var(--foreground);
     font-family: var(--font-sans);
     text-align: center;
-    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -73,7 +72,4 @@
 @layer utilities {
 
   /* Misal utility tambahan */
-  .cursor-pointer-important {
-    cursor: pointer !important;
-  }
 }

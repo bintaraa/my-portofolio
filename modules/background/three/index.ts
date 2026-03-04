@@ -23,7 +23,10 @@ export function initThree(container: HTMLDivElement) {
   createCity(city, town);
   createSmoke(smoke);
   createGrid(city);
-  createCars(city);
+
+  for (let i = 0; i < 60; i++) {
+    createCars(city);
+  }
   createLights(scene, city);
 
   scene.add(city);
@@ -42,4 +45,11 @@ export function initThree(container: HTMLDivElement) {
     mouse,
     uSpeed: 0.001,
   });
+
+
+  return {
+    scene,
+    renderer,
+    camera,
+  };
 }

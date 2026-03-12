@@ -39,5 +39,5 @@ export default function CubeCity() {
     );
   }, [resolvedTheme]);
 
-  return <div ref={containerRef} className="fixed inset-0 -z-10" />;
+  return <div ref={containerRef} className="fixed inset-0 -z-20" />;
 }

@@ -1,10 +1,14 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans bg-transparent">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-transparent sm:items-start surface-blur">
-        <h1 className="text-4xl font-bold">Hi, I'm Aditya Bintara</h1>
+    <div className="flex min-h-screen items-center justify-center bg-transparent">
+      <main className="flex flex-col items-center gap-2 text-center">
+        <p className="text-sm font-light tracking-wide">
+          Hi!, I'm Bintara
+        </p>
+
+        <h1 className="text-[64px] font-light tracking-[-0.02em] leading-[1.1]">
+          Software Engineer
+        </h1>
       </main>
     </div>
   );

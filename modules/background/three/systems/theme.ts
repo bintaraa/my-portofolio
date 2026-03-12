@@ -25,7 +25,7 @@ export function updateSceneTheme(
         r: targetColor.r,
         g: targetColor.g,
         b: targetColor.b,
-        duration: 0.8,
+        duration: 0.1,
     });
 
     // 🛡️ Ensure fog exists and matches background
@@ -40,7 +40,7 @@ export function updateSceneTheme(
         r: targetColor.r,
         g: targetColor.g,
         b: targetColor.b,
-        duration: 0.8,
+        duration: 0.1,
     });
 
     // 🏗️ Update visibility of objects in the scene
@@ -55,7 +55,7 @@ export function updateSceneTheme(
                     r: new THREE.Color(buildingColor).r,
                     g: new THREE.Color(buildingColor).g,
                     b: new THREE.Color(buildingColor).b,
-                    duration: 0.8,
+                    duration: 0.1,
                 });
             }
         }

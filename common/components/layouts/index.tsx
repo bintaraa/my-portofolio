@@ -6,6 +6,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import CubeCity from "@/modules/background/components/CubeCity";
+import { Header } from "./header/Header";
+
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -29,20 +31,16 @@ const Layout = ({ children }: LayoutProps) => {
     }, [pathname]);
 
     return (
-        <div className="relative min-h-screen overflow-hidden bg-white dark:bg-black transition-colors duration-500">
+        <div className="relative min-h-screen overflow-hidden bg-transparent transition-colors duration-500">
 
             {/* 🔥 Background 3D */}
-            <div className="fixed inset-0 -z-10">
-                <CubeCity />
-            </div>
+            <CubeCity />
 
+            <Header />
             {/* 🔥 Content */}
-            <div
-                ref={mainRef}
-                className="relative z-10 mx-auto max-w-6xl px-6 py-10"
-            >
+            <main ref={mainRef} className="relative z-10 px-6 py-10">
                 {children}
-            </div>
+            </main>
         </div>
     );
 };
